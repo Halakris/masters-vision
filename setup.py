@@ -1,4 +1,32 @@
+import subprocess
+import sys
+import os
 from setuptools import setup, find_packages
+
+
+def ensure_venv():
+    """Create virtual environment if it doesn't exist and return the path."""
+    venv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "venv")
+    venv_python = os.path.join(venv_path, "bin", "python")
+    if not os.path.exists(venv_python):
+        print("Creating virtual environment...")
+        subprocess.check_call([sys.executable, "-m", "virtualenv", venv_path])
+    
+    # Print activation instructions
+    print(f"\nVirtual environment ready at: {venv_path}")
+    print(f"To activate: source {os.path.join(venv_path, 'bin', 'activate')}")
+    
+    return venv_path
+
+
+class VenvSetupCommand:
+    """Custom setup command to ensure venv is created."""
+    
+    def run(self):
+        venv_path = ensure_venv()
+        print(f"\nVirtual environment at: {venv_path}")
+        print("Remember to activate it before running the project:")
+
 
 setup(
     name="masters-vision",
