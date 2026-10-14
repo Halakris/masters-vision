@@ -1,0 +1,21 @@
+# Core dependencies for indoor navigation system
+opencv-python>=4.5.0
+numpy>=1.20.0
+torch>=1.9.0
+torchvision>=0.10.0
+
+# Computer vision and image processing
+scikit-image>=0.17.0
+matplotlib>=3.3.0
+
+# Data handling and serialization
+pyyaml>=5.4.0
+json-tricks>=3.3.0
+
+# Testing and development
+pytest>=7.0.0
+pytest-cov>=3.0.0
+
+# Utilities
+tqdm>=4.60.0
+loguru>=0.5.0
