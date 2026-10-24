@@ -1,0 +1,6 @@
+# .dockerignore
+.git/
+data/
+results/
+datasets/
+data/euroc/
